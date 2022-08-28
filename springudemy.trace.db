@@ -1,3 +1,7 @@
 2022-08-28 17:02:00 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]TB_USER"; expected "TRUNCATE"; SQL statement:
 TB_USER [42001-214]
+2022-08-28 17:26:17 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TB_ORDER \000d\000a[*]SELECT * FROM TB_UDER"; SQL statement:
+SELECT * FROM TB_ORDER 
+SELECT * FROM TB_UDER [42000-214]

@@ -1,5 +1,6 @@
 package com.example.demo.resources;
 
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -12,44 +13,52 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entities.Order;
 import com.example.demo.entities.User;
+import com.example.demo.repositories.OrderRepository;
 import com.example.demo.repositories.UserRepository;
+import com.example.demo.services.OrderService;
 import com.example.demo.services.UserService;
 
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/orders")
 
 // CommandLineRunner serve para executar algum comando toda vez que a aplicação
 // for iniciada basta extender a classe com:
 // *implements CommandLineRunner*
-public class UserResources {
+public class OrderResources {
 
     @Autowired
     private UserRepository userRep;
 
     @Autowired
-    private UserService services;
+    private OrderRepository orderRep;
+
+    @Autowired
+    private OrderService services;
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll() {
-        List<User> result = services.findAll();
+    public ResponseEntity<List<Order>> findAll() {
+        List<Order> result = services.findAll();
         return ResponseEntity.ok().body(result);
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Optional<User>> findById(@PathVariable Long id) {
-        Optional<User> result = services.findById(id);
+    public ResponseEntity<Optional<Order>> findById(@PathVariable Long id) {
+        Optional<Order> result = services.findById(id);
         return ResponseEntity.ok().body(result);
 
     }
 
     // @Override
     // public void run(String... args) throws Exception {
-    // User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888",
-    // "123456");
-    // User u2 = new User(null, "Alex Green", "alex@gmail.com", "977777777",
-    // "123456");
+    // Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"),
+    // userRep.getReferenceById((long) 1));
+    // Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"),
+    // userRep.getReferenceById((long) 2));
+    // Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"),
+    // userRep.getReferenceById((long) 1));
 
-    // userRep.saveAll(Arrays.asList(u1, u2));
+    // orderRep.saveAll(Arrays.asList(o1, o2, o3));
     // }
 }

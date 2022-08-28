@@ -10,7 +10,7 @@ import com.example.demo.entities.User;
 import com.example.demo.repositories.UserRepository;
 
 @Service
-public class Services {
+public class UserService {
 
     @Autowired
     private UserRepository userRep;

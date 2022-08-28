@@ -2,20 +2,28 @@ package com.example.demo.entities;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class UserAPI implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
     private String phone;
     private String password;
 
-    public User() {
+    public UserAPI() {
 
     }
 
-    public User(Long id, String name, String email, String phone, String password) {
+    public UserAPI(Long id, String name, String email, String phone, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -79,7 +87,7 @@ public class User implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        User other = (User) obj;
+        UserAPI other = (UserAPI) obj;
         if (id == null) {
             if (other.id != null)
                 return false;

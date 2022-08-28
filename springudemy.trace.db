@@ -5,3 +5,18 @@ TB_USER [42001-214]
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TB_ORDER \000d\000a[*]SELECT * FROM TB_UDER"; SQL statement:
 SELECT * FROM TB_ORDER 
 SELECT * FROM TB_UDER [42000-214]
+2022-08-28 19:20:37 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TB_ORDER \000d\000a\000d\000adelete [*]from tb_order"; SQL statement:
+SELECT * FROM TB_ORDER 
+
+delete from tb_order [42000-214]
+2022-08-28 19:20:45 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TB_ORDER \000d\000a\000d\000adelete [*]* from tb_order"; SQL statement:
+SELECT * FROM TB_ORDER 
+
+delete * from tb_order [42000-214]
+2022-08-28 19:21:51 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]TB_ORDER \000d\000a\000d\000atruncate table tb_order"; expected "TRUNCATE"; SQL statement:
+TB_ORDER 
+
+truncate table tb_order [42001-214]

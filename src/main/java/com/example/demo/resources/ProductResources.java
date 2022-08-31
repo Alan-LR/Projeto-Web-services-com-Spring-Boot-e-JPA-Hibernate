@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entities.Category;
 import com.example.demo.entities.Product;
+import com.example.demo.repositories.CategoryRepository;
 import com.example.demo.repositories.ProductRepository;
 import com.example.demo.services.ProductService;
 
@@ -22,13 +24,16 @@ import com.example.demo.services.ProductService;
 // CommandLineRunner serve para executar algum comando toda vez que a aplicação
 // for iniciada basta extender a classe com:
 // *implements CommandLineRunner*
-public class ProductResources implements CommandLineRunner {
+public class ProductResources {
 
     @Autowired
     private ProductService services;
 
     @Autowired
     private ProductRepository prodRep;
+
+    @Autowired
+    private CategoryRepository catRep;
 
     @GetMapping
     public ResponseEntity<List<Product>> findAll() {
@@ -43,15 +48,33 @@ public class ProductResources implements CommandLineRunner {
 
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-        Product p1 = new Product(null, "The Lord of the Rings", "Lorem ipsum dolor sit amet, consectetur.", 90.5, "");
-        Product p2 = new Product(null, "Smart TV", "Nulla eu imperdiet purus. Maecenas ante.", 2190.0, "");
-        Product p3 = new Product(null, "Macbook Pro", "Nam eleifend maximus tortor, at mollis.", 1250.0, "");
-        Product p4 = new Product(null, "PC Gamer", "Donec aliquet odio ac rhoncus cursus.", 1200.0, "");
-        Product p5 = new Product(null, "Rails for Dummies", "Cras fringilla convallis sem vel faucibus.", 100.99, "");
+    // @Override
+    // public void run(String... args) throws Exception {
 
-        prodRep.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
-    }
+    // Category cat1 = new Category(null, "Electronics");
+    // Category cat2 = new Category(null, "Books");
+    // Category cat3 = new Category(null, "Computers");
+
+    // catRep.saveAll(Arrays.asList(cat1, cat2, cat3));
+
+    // Product p1 = new Product(null, "The Lord of the Rings", "tste", 90.5, "");
+    // Product p2 = new Product(null, "Smart TV", "Maecenas ante.", 2190.0, "");
+    // Product p3 = new Product(null, "Macbook Pro", "Nam eleifend maximus tortor,at
+    // mollis.", 1250.0, "");
+    // Product p4 = new Product(null, "PC Gamer", "Donec aliquet odio ac rhoncus
+    // cursus.", 1200.0, "");
+    // Product p5 = new Product(null, "Rails for Dummies", "Cras fringilla convallis
+    // sem vel faucibus.", 100.99, "");
+
+    // p1.getCategories().add(cat2);
+    // p2.getCategories().add(cat1);
+    // p2.getCategories().add(cat3);
+    // p3.getCategories().add(cat3);
+    // p4.getCategories().add(cat3);
+    // p5.getCategories().add(cat2);
+
+    // prodRep.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
+
+    // }
 
 }

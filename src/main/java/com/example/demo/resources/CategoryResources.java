@@ -1,8 +1,11 @@
 package com.example.demo.resources;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -40,6 +43,19 @@ public class CategoryResources {
     @GetMapping("{id}")
     public ResponseEntity<Optional<Category>> findById(@PathVariable Long id) {
         Optional<Category> result = services.findById(id);
+        return ResponseEntity.ok().body(result);
+
+    }
+
+    @GetMapping("/teste/{id}")
+    public ResponseEntity<Optional<Category>> findByIdaaa(@PathVariable Long id) {
+        Optional<Category> result = services.findById(id);
+        // exemplo comparando hashcode and equals
+        // Category cat1 = new Category(17L, "teste");
+        // Category cat2 = new Category(20L, "teste");
+        // System.out.println("HashCode cat1 =" + cat1.hashCode());
+        // System.out.println("HashCode cat2 =" + cat2.hashCode());
+        // System.out.println(cat1.getName().equals(cat2.getName()));
         return ResponseEntity.ok().body(result);
 
     }

@@ -15,7 +15,7 @@ public class OrderItem implements Serializable {
 
     // anotação para um Id composto
     @EmbeddedId
-    private OrderItemPk id;
+    private OrderItemPk id = new OrderItemPk();
     private Integer quantity;
     private Double price;
 

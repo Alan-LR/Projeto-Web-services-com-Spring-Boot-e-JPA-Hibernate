@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.Category;
+import com.example.demo.entities.OrderItem;
 import com.example.demo.entities.Product;
 import com.example.demo.repositories.CategoryRepository;
+import com.example.demo.repositories.OrderItemRepository;
 import com.example.demo.repositories.ProductRepository;
 import com.example.demo.services.ProductService;
 

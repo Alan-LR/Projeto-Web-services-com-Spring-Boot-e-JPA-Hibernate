@@ -1,4 +1,4 @@
-package com.example.demo.resources;
+package com.example.demo.resourcesController;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -59,14 +59,5 @@ public class CategoryResources {
         return ResponseEntity.ok().body(result);
 
     }
-
-    // @Override
-    // public void run(String... args) throws Exception {
-    // Category cat1 = new Category(null, "Electronics");
-    // Category cat2 = new Category(null, "Books");
-    // Category cat3 = new Category(null, "Computers");
-
-    // catRep.saveAll(Arrays.asList(cat1, cat2, cat3));
-    // }
 
 }

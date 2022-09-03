@@ -1,4 +1,4 @@
-package com.example.demo.resources;
+package com.example.demo.resourcesController;
 
 import java.time.Instant;
 import java.util.Arrays;

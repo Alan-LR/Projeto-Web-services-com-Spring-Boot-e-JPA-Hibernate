@@ -1,4 +1,4 @@
-package com.example.demo.resources;
+package com.example.demo.resourcesController;
 
 import java.time.Instant;
 import java.util.Arrays;
@@ -57,13 +57,4 @@ public class OrderItemResources {
 
     // }
 
-    // @Override
-    // public void run(String... args) throws Exception {
-    // OrderItem oi1 = new OrderItem(o1, p1, 2, p1.getPrice());
-    // OrderItem oi2 = new OrderItem(o1, p3, 1, p3.getPrice());
-    // OrderItem oi3 = new OrderItem(o2, p3, 2, p3.getPrice());
-    // OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPrice());
-
-    // orderItemRep.saveAll(Arrays.asList(o1, o2, o3));
-    // }
 }

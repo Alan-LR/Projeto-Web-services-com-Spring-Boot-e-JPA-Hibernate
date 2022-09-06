@@ -43,8 +43,8 @@ public class UserResources {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Optional<User>> findById(@PathVariable Long id) {
-        Optional<User> result = services.findById(id);
+    public ResponseEntity<User> findById(@PathVariable Long id) {
+        User result = services.findById(id);
         return ResponseEntity.ok().body(result);
 
     }

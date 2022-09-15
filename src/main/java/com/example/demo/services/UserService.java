@@ -10,9 +10,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entities.Order;
 import com.example.demo.entities.User;
-import com.example.demo.repositories.OrderRepository;
 import com.example.demo.repositories.UserRepository;
 import com.example.demo.services.ServicesExceptions.DatabaseException;
 import com.example.demo.services.ServicesExceptions.ResourceNotFoundException;
